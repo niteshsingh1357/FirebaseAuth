@@ -3,7 +3,7 @@
 // Login Screen
 
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 
 import firebase from '@react-native-firebase/app';
 import '@react-native-firebase/auth';
@@ -52,7 +52,6 @@ export default class Login extends React.Component {
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          // title="Already have an account? Login"
           onPress={() => this.props.navigation.navigate('SignUp')}>
             <Text>
             <Text> Don't have an account?</Text><Text style={styles.linkText}> SignUp </Text>

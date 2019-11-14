@@ -2,7 +2,7 @@
 // SignUp Screen
 
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 
 import firebase from '@react-native-firebase/app';
 import '@react-native-firebase/auth';
@@ -22,11 +22,6 @@ render() {
     return (
       <View style={styles.container}>
         <Text style={styles.headerText}>Sign Up</Text>
-        {this.state.errorMessage &&
-          // eslint-disable-next-line react-native/no-inline-styles
-          <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
-          </Text>}
         <TextInput
           placeholder="Email"
           autoCapitalize="none"
@@ -42,6 +37,11 @@ render() {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
+        {this.state.errorMessage &&
+          // eslint-disable-next-line react-native/no-inline-styles
+          <Text style={{ color: 'red', padding:15 }}>
+            {this.state.errorMessage}
+          </Text>}
         <TouchableOpacity onPress={this.handleSignUp}
           style={styles.button}
           color={'#432577'}>
